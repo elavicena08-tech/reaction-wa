@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Reaction Saluran 🔥</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #111;
+  color: white;
+}
+button {
+  font-size: 30px;
+  margin: 10px;
+  padding: 15px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.like { background: #25D366; }
+.fire { background: #ff4500; }
+.love { background: #ff1493; }
+.counter { font-size: 20px; margin-top: 20px; }
+</style>
+</head>
+
+<body>
+<h1>REACTION SALURAN 🔥</h1>
+<p>Klik reaction biar admin senyum 😎</p>
+
+<button class="like" onclick="react('like')">👍</button>
+<button class="fire" onclick="react('fire')">🔥</button>
+<button class="love" onclick="react('love')">❤️</button>
+
+<div class="counter">
+👍 <span id="like">0</span> |
+🔥 <span id="fire">0</span> |
+❤️ <span id="love">0</span>
+</div>
+
+<script>
+function react(type){
+  let count = localStorage.getItem(type) || 0;
+  count++;
+  localStorage.setItem(type, count);
+  document.getElementById(type).innerText = count;
+}
+</script>
+</body>
+</html>
